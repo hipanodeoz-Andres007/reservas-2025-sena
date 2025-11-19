@@ -1,0 +1,4 @@
+# Dependencias de Node (no deben subirse)
+/node_modules
+# Archivos de caché o logs
+npm-debug.log

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+    <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+    <header>
+        <h1><%= nombreApp %></h1>
+        <p>Sistema Web Sencillo para la Evidencia</p>
+    </header>
+
+    <main class="container">
+        <h2><%= mensaje %></h2>
+        
+        <section class="module-info">
+            <h3>Módulo de Búsqueda de Habitaciones</h3>
+            <p>Este es el módulo web simple requerido en la evidencia. Permite simular una búsqueda de reservas hoteleras.</p>
+        </section>
+
+        <form class="booking-form">
+            <div class="form-group">
+                <label for="destino">Destino:</label>
+                <input type="text" id="destino" name="destino" placeholder="Ciudad, Hotel o Destino" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha-entrada">Fecha de Entrada:</label>
+                <input type="date" id="fecha-entrada" name="fecha-entrada" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha-salida">Fecha de Salida:</label>
+                <input type="date" id="fecha-salida" name="fecha-salida" required>
+            </div>
+            <div class="form-group">
+                <label for="huespedes">Huéspedes:</label>
+                <input type="number" id="huespedes" name="huespedes" value="1" min="1" required>
+            </div>
+            <button type="submit" class="btn-buscar">Buscar Habitaciones</button>
+        </form>
+
+        <p class="nota">La conexión con la base de datos MySQL se realizaría en el archivo 'server.js' para manejar esta información.</p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Codificación para la Evidencia - SENA</p>
+    </footer>
+</body>
+</html>
