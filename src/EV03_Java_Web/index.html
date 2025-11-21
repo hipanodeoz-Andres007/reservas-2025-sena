@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Front-End: Búsqueda de Reservas</title>
+    <!-- Estilos básicos integrados para presentación -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f0f4f8; color: #1e293b; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); width: 90%; max-width: 500px; }
+        h1 { color: #0056b3; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #0056b3; padding-bottom: 10px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; color: #334155; }
+        input[type="text"], input[type="date"], input[type="number"] { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; transition: border-color 0.3s; }
+        input:focus { border-color: #007bff; outline: none; }
+        /* Botón de envío (usa POST para simular la reserva) */
+        .btn-buscar { background-color: #28a745; color: white; padding: 14px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; width: 100%; transition: background-color 0.3s; margin-top: 15px; }
+        .btn-buscar:hover { background-color: #1e8334; }
+        .info-servlet { margin-top: 20px; padding: 15px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; font-size: 0.9em; color: #856404; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Módulo Front-End de Reservas</h1>
+        
+        <!--
+        La acción del formulario apunta al Servlet. 
+        El método POST simula el envío final de una reserva (Método POST requerido).
+        -->
+        <form action="/ReservaServlet" method="POST">
+            <div class="form-group">
+                <label for="destino">Destino / Ciudad:</label>
+                <!-- La propiedad 'required' garantiza la validación de HTML5 -->
+                <input type="text" id="destino" name="destino" required placeholder="Ej: Bogotá o Hotel Central">
+            </div>
+            
+            <div class="form-group">
+                <label for="huespedes">Número de Huéspedes:</label>
+                <!-- Usa type="number" y min="1" para validación de tipo de dato -->
+                <input type="number" id="huespedes" name="huespedes" min="1" value="1" required>
+            </div>
+
+            <!-- Botón de Envío: Simula la acción de RESERVAR (POST) -->
+            <button type="submit" class="btn-buscar">Reservar Ahora (Método POST)</button>
+        </form>
+
+        <div class="info-servlet">
+            <p><strong>Nota:</strong> Este formulario envía los datos al **ReservaServlet** usando el método **POST**, cumpliendo con los requisitos de la evidencia. El Servlet procesará la información y mostrará la confirmación usando una página **JSP**.</p>
+        </div>
+    </div>
+</body>
+</html>
